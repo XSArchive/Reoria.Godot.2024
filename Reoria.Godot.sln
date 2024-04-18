@@ -1,12 +1,17 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reoria.Godot", "source\Reoria.Godot\Reoria.Godot.csproj", "{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reoria.Godot", "source\Reoria.Godot\Reoria.Godot.csproj", "{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{037BB343-8942-45F8-AC05-55C2347D7769}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-	Debug|Any CPU = Debug|Any CPU
-	ExportDebug|Any CPU = ExportDebug|Any CPU
-	ExportRelease|Any CPU = ExportRelease|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -15,5 +20,11 @@ Global
 		{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B} = {037BB343-8942-45F8-AC05-55C2347D7769}
 	EndGlobalSection
 EndGlobal
