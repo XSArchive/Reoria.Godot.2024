@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blxlhmdxmtnst"]
+
+[ext_resource type="Script" path="res://Nodes/Engine/GameEngine.cs" id="1_306ii"]
+
+[node name="GameEngine" type="Node"]
+script = ExtResource("1_306ii")
