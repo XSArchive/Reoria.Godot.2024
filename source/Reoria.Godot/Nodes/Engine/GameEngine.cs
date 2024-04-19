@@ -27,6 +27,11 @@ public partial class GameEngine : Node
     }
 
     /// <summary>
+    /// Defines the reference to the <see cref="GameEngine"/>'s interface <see cref="Node"/>.
+    /// </summary>
+    public Control Interface { get; private set; }
+
+    /// <summary>
     /// Constructs a new <see cref="GameEngine"/> instance and assignes the reference to it to <see cref="Instance"/>.
     /// </summary>
     public GameEngine()
@@ -51,6 +56,7 @@ public partial class GameEngine : Node
     public override void _Ready()
     {
         // Fetch and assign the child node variables if they have not been assigned yet.
+        this.Interface ??= this.GetNode<Control>("Interface");
 
         // Pass to the base class' function.
         base._Ready();
