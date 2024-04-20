@@ -7,16 +7,17 @@ public partial class NetworkManager : Node
     [Export]
     public ENetMultiplayerPeer Peer { get; protected set; }
 
-    public static bool IsAvailable => GameEngine.Instance.Multiplayer.MultiplayerPeer != null;
-    public static bool IsServer => GameEngine.Instance.Multiplayer.IsServer();
-    public static long UniqueId => GameEngine.Instance.Multiplayer.GetUniqueId();
-    public static MultiplayerPeer.ConnectionStatus ConnectionStatus => GameEngine.Instance.Multiplayer.MultiplayerPeer.GetConnectionStatus();
+    public static bool IsAvailable => GetMultiplayer().MultiplayerPeer != null;
+    public static bool IsServer => GetMultiplayer().IsServer();
+    public static long UniqueId => GetMultiplayer().GetUniqueId();
+    public static MultiplayerPeer.ConnectionStatus ConnectionStatus => GetMultiplayer().MultiplayerPeer.GetConnectionStatus();
+    protected static MultiplayerApi GetMultiplayer() => GameEngine.Instance.Multiplayer;
 
     public virtual bool ConnectToHost(string ipAddress, int port)
     {
-        if (GameEngine.Instance.Multiplayer.MultiplayerPeer != null)
+        if (GetMultiplayer().MultiplayerPeer != null)
         {
-            if (GameEngine.Instance.Multiplayer.MultiplayerPeer is not OfflineMultiplayerPeer)
+            if (GetMultiplayer().MultiplayerPeer is not OfflineMultiplayerPeer)
             { return false; }
         }
         if (this.Peer != null)
@@ -27,7 +28,7 @@ public partial class NetworkManager : Node
 
         if (result == Error.Ok)
         {
-            GameEngine.Instance.Multiplayer.MultiplayerPeer = this.Peer;
+            GetMultiplayer().MultiplayerPeer = this.Peer;
             return true;
         }
 
@@ -37,9 +38,9 @@ public partial class NetworkManager : Node
 
     public virtual bool CreateHost(int port, int maxConnections)
     {
-        if (GameEngine.Instance.Multiplayer.MultiplayerPeer != null)
+        if (GetMultiplayer().MultiplayerPeer != null)
         {
-            if (GameEngine.Instance.Multiplayer.MultiplayerPeer is not OfflineMultiplayerPeer)
+            if (GetMultiplayer().MultiplayerPeer is not OfflineMultiplayerPeer)
             { return false; }
         }
         if (this.Peer != null)
@@ -51,7 +52,7 @@ public partial class NetworkManager : Node
 
         if (result == Error.Ok)
         {
-            GameEngine.Instance.Multiplayer.MultiplayerPeer = this.Peer;
+            GetMultiplayer().MultiplayerPeer = this.Peer;
             return true;
         }
 
@@ -61,13 +62,13 @@ public partial class NetworkManager : Node
 
     public virtual bool CloseConnection()
     {
-        if (GameEngine.Instance.Multiplayer.MultiplayerPeer != null && GameEngine.Instance.Multiplayer.MultiplayerPeer != this.Peer)
+        if (GetMultiplayer().MultiplayerPeer != null && GetMultiplayer().MultiplayerPeer != this.Peer)
         { return false; }
 
-        if (GameEngine.Instance.Multiplayer.MultiplayerPeer != null)
+        if (GetMultiplayer().MultiplayerPeer != null)
         {
-            GameEngine.Instance.Multiplayer.MultiplayerPeer.Close();
-            GameEngine.Instance.Multiplayer.MultiplayerPeer = null;
+            GetMultiplayer().MultiplayerPeer.Close();
+            GetMultiplayer().MultiplayerPeer = null;
         }
 
         if (this.Peer != null)
@@ -76,17 +77,17 @@ public partial class NetworkManager : Node
             this.Peer = null;
         }
 
-        return (GameEngine.Instance.Multiplayer.MultiplayerPeer is null) && (this.Peer is null);
+        return (GetMultiplayer().MultiplayerPeer is null) && (this.Peer is null);
     }
 
     public virtual bool PurgeConnection()
     {
-        GameEngine.Instance.Multiplayer.MultiplayerPeer?.Close();
-        GameEngine.Instance.Multiplayer.MultiplayerPeer = null;
+        GetMultiplayer().MultiplayerPeer?.Close();
+        GetMultiplayer().MultiplayerPeer = null;
 
         this.Peer?.Close();
         this.Peer = null;
 
-        return (GameEngine.Instance.Multiplayer.MultiplayerPeer is null) && (this.Peer is null);
+        return (GetMultiplayer().MultiplayerPeer is null) && (this.Peer is null);
     }
 }
