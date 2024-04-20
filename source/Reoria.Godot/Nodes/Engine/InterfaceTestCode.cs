@@ -96,7 +96,7 @@ public partial class InterfaceTestCode : Control
 
     private void ButtonQuit_Pressed() => this.GetTree().Quit(); 
     private void Multiplayer_ConnectedToServer() => this.OpenNetworkUi();
-    private void Multiplayer_ConnectionFailed() => this.ResetNetworkUi();
+    private void Multiplayer_ConnectionFailed() => this.Multiplayer_ServerDisconnected();
 
     private void ButtonHost_Pressed()
     {
