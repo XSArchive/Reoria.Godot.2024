@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Reoria.Nodes.Engine;
+namespace Reoria.Godot.Nodes.Engine;
 
 /// <summary>
 /// Defines functionality of the game engine <see cref="Node"/>.
