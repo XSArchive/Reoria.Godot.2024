@@ -19,3 +19,8 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Reoria.Godot"
 project/solution_directory="..\\..\\"
+
+[gui]
+
+theme/custom="res://Data/Interface/Reoria_Default.tres"
+theme/custom_font="res://Assets/Fonts/Kenney Pixel.ttf"
