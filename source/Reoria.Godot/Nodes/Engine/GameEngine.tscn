@@ -1,16 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://blxlhmdxmtnst"]
+[gd_scene load_steps=2 format=3 uid="uid://blxlhmdxmtnst"]
 
 [ext_resource type="Script" path="res://Nodes/Engine/GameEngine.cs" id="1_306ii"]
-[ext_resource type="PackedScene" uid="uid://bn064305yy3oa" path="res://Nodes/Interface/MainMenu.tscn" id="2_8a6a2"]
-[ext_resource type="Script" path="res://Nodes/Engine/NetworkManager.cs" id="2_84mem"]
-[ext_resource type="PackedScene" uid="uid://sasc8x8hh02p" path="res://Nodes/Interface/NetworkMenu.tscn" id="3_5d8rj"]
-[ext_resource type="Script" path="res://Nodes/Engine/InterfaceTestCode.cs" id="3_wrj5u"]
 
 [node name="GameEngine" type="Node"]
 script = ExtResource("1_306ii")
-
-[node name="Network" type="Node" parent="."]
-script = ExtResource("2_84mem")
 
 [node name="Interface" type="Control" parent="."]
 layout_mode = 3
@@ -19,11 +12,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_wrj5u")
-
-[node name="NetworkMenu" parent="Interface" instance=ExtResource("3_5d8rj")]
-visible = false
-layout_mode = 0
-
-[node name="MainMenu" parent="Interface" instance=ExtResource("2_8a6a2")]
-layout_mode = 1
