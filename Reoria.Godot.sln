@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reoria.Godot", "source\Reor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{037BB343-8942-45F8-AC05-55C2347D7769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reoria.Data", "source\Reoria.Data\Reoria.Data.csproj", "{078220C4-8FD2-4DD3-9582-DCE10D6CB47E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reoria.Data", "source\Reoria.Data\Reoria.Data.csproj", "{078220C4-8FD2-4DD3-9582-DCE10D6CB47E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,5 +40,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{58DE3929-E803-4AAD-B5E1-D9EA31CCB11B} = {037BB343-8942-45F8-AC05-55C2347D7769}
 		{078220C4-8FD2-4DD3-9582-DCE10D6CB47E} = {037BB343-8942-45F8-AC05-55C2347D7769}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B874FB42-7E75-4B94-BB12-BFDF5FEBAE7C}
 	EndGlobalSection
 EndGlobal

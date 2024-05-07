@@ -2,7 +2,6 @@
 
 namespace Reoria.Data.Types.Interfaces;
 
-
 /// <summary>
 /// Defines <see cref="IAccount"/> data and functions which are used to store player login information.
 /// </summary>
@@ -56,5 +55,5 @@ public interface IAccount
     /// <param name="challengePassword">The password the player uses to authenticate into the game with.</param>
     /// <returns>True if the challenge password matches the one stored on the account, false under any other result.</returns>
     /// <exception cref="ArgumentException"></exception>
-    bool VerifyPassword(string rawPassword);
+    bool VerifyPassword(string challengePassword);
 }
