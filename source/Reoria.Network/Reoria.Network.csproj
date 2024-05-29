@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Reoria.Network\Reoria.Network.csproj" />
     <ProjectReference Include="..\Reoria\Reoria.csproj" />
   </ItemGroup>
 
