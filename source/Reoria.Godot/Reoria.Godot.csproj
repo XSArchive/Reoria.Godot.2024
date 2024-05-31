@@ -1,18 +1,11 @@
 ﻿<Project Sdk="Godot.NET.Sdk/4.2.2">
-  
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net7.0</TargetFramework>
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'ios' ">net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
-  
   <ItemGroup>
     <ProjectReference Include="..\Reoria.Data\Reoria.Data.csproj" />
-    <ProjectReference Include="..\Reoria.Network\Reoria.Network.csproj" />
-    <ProjectReference Include="..\Reoria.Server.Authentication\Reoria.Server.Authentication.csproj" />
-    <ProjectReference Include="..\Reoria.Server\Reoria.Server.csproj" />
-    <ProjectReference Include="..\Reoria\Reoria.csproj" />
   </ItemGroup>
-  
 </Project>
